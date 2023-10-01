@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #modal{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: rgb(167, 55, 55);
+            box-sizing: border-box;
+            position: fixed;
+            left: calc(50% - 250px);
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="openModal()">open modal</button>
+    <div id="modal" style="display: none;">
+        <h1>warning</h1>
+        <button onclick="closeModal()">close</button>
+    </div>
+    <script>
+        function openModal(){
+            document.getElementById("modal").style.display = "flex";
+        }
+        function closeModal(){
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

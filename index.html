@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        table , th , tr , td{
+            text-align: center;
+            padding: 20px 10px;
+            border: 1px solid lightblue;
+            border-collapse: collapse;
+        }
+        table {
+            width: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <input type="text"  name="name" id="name">
+    <input type="text" name="ghad" id="ghad">
+    <input type="text" name="vazn" id="vazn">
+    <button onclick="myfun()">submit</button>
+    <hr/>
+    <table>
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>bmi</th>
+          <th>condition</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <tr id="tr"></tr>
+      </tbody>
+    </table>
+    <script>
+       
+        function myfun(){
+            var name = document.getElementById("name").value;
+            var vazn = document.getElementById("vazn").value;
+            var ghad = document.getElementById("ghad").value;
+            var bmi = vazn / ghad ** 2;
+            if (bmi <= 18.5) {
+         document.getElementById("tr").innerHTML += `<td>${name}</td>`;
+         document.getElementById("tr").innerHTML += `<td>${bmi}</td>`;
+         document.getElementById("tr").innerHTML += "<td>shoma laghar hastid</td>";
+        }
+         else if (bmi > 18.5 && bmi <= 24.99) {
+            document.getElementById("tr").innerHTML += `<td>${name}</td>`;
+            document.getElementById("tr").innerHTML += `<td>${bmi}</td>`;
+            document.getElementById("tr").innerHTML += "<td>shoma normal hastid</td>";
+        }
+         else if (bmi >= 25 && bmi <= 29.99) {
+            document.getElementById("tr").innerHTML += `<td>${name}</td>`;
+            document.getElementById("tr").innerHTML += `<td>${bmi}</td>`;
+            document.getElementById("tr").innerHTML += "<td>shoma ezafe vazn darid</td>";
+        }
+         else if (bmi >= 30 && bmi <= 34.99) {
+            document.getElementById("tr").innerHTML += `<td>${name}</td>`;
+            document.getElementById("tr").innerHTML += `<td>${bmi}</td>`;
+            document.getElementById("tr").innerHTML += "<td>shoma chagh hastid</td>";
+        }
+         else if (bmi >= 35) {
+            document.getElementById("tr").innerHTML += `<td>${name}</td>`;
+            document.getElementById("tr").innerHTML += `<td>${bmi}</td>`;
+            document.getElementById("tr").innerHTML += "<td>shoma besiar chagh hastid</td>";
+        }
+        }
+        
+    </script>
+  </body>
+</html>
